@@ -1,0 +1,252 @@
+\documentclass[a4 paper]{article}
+\usepackage[inner=2.0cm,outer=2.0cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage[rgb]{xcolor}
+\usepackage{verbatim}
+\usepackage{subcaption}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,tikz,amssymb}
+\usepackage[colorlinks=true, urlcolor=blue,  linkcolor=blue, citecolor=blue]{hyperref}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{rotating}
+\usepackage{booktabs}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\numberwithin{equation}{section}
+
+\newcommand{\homework}[6]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \setcounter{page}{1}
+   \noindent
+   \begin{center}
+   \framebox{
+      \vbox{\vspace{2mm}
+    \hbox to 6.28in { {\bf CSE 211:~Discrete Mathematics \hfill {\small (#2)}} }
+       \vspace{6mm}
+       \hbox to 6.28in { {\Large \hfill #1  \hfill} }
+       \vspace{6mm}
+       \hbox to 6.28in { {\it Instructor: {\rm #3} \hfill Name: {\rm #5} \hfill Student Id: {\rm #6}} \hfill}
+       \hbox to 6.28in { {\it Assistant: #4  \hfill #6}}
+      \vspace{2mm}}
+   }
+   \end{center}
+   \markboth{#5 -- #1}{#5 -- #1}
+   \vspace*{4mm}
+}
+
+\newcommand{\problem}[2]{~\\\fbox{\textbf{Problem #1}}\hfill (#2 points)\newline\newline}
+\newcommand{\subproblem}[1]{~\newline\textbf{(#1)}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\Hy}{\mathcal{H}}
+\newcommand{\VS}{\textrm{VS}}
+\newcommand{\solution}{~\newline\textbf{\textit{(Solution)}} }
+
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bY}{\mathbf{Y}}
+\newcommand{\bepsilon}{\boldsymbol{\epsilon}}
+\newcommand{\balpha}{\boldsymbol{\alpha}}
+\newcommand{\bbeta}{\boldsymbol{\beta}}
+\newcommand{\0}{\mathbf{0}}
+
+
+\begin{document}
+\homework{Homework \#4}{Due: 17/01/21}{Dr. Zafeirakis Zafeirakopoulos}{Gizem S\"ung\"u}{}{}
+\textbf{Course Policy}: Read all the instructions below carefully before you start working on the assignment, and before you make a submission.
+\begin{itemize}
+	\item It is not a group homework. Do not share your answers to anyone in any circumstance. Any cheating means at least -100 for both sides. 
+	\item Do not take any information from Internet.
+	\item No late homework will be accepted. 
+	\item For any questions about the homework, send an email to gizemsungu@gtu.edu.tr
+	\item The homeworks (both latex and pdf files in a zip file) will be
+	submitted into the course page of Moodle.
+	\item The latex, pdf and zip files of the homeworks should be saved as
+	"Name\_Surname\_StudentId".$\{$tex, pdf, zip$\}$.
+	\item If the answers of the homeworks have only calculations without any formula or any explanation -when needed- will get zero.
+	\item Writing the homeworks on Latex is strongly suggested. However, hand-written paper is still accepted $\textbf{IFF}$ hand writing of the student is clear and understandable to read, and the paper is well-organized. Otherwise, the assistant cannot grade the student's homework.
+\end{itemize}
+
+\problem{1}{15+15=30}
+Consider the nonhomogeneous linear recurrence relation $a_n$ = 3$a_{n-1}$ + $2^n$ .\\
+\subproblem{a} Show that whether $a_n$ = $-2^{n+1}$ is a solution of the given recurrence relation or not. Show your work step by step.
+\solution
+\newline
+\newline
+if $a_n$ = $-2^{n+1}$ ,then what is $a_{n-1}$ ?
+\newline
+$a_{n-1}$ = $-2^{n-1+1}$ = $-2^n$
+\newline
+if we plug the $a_{n-1}$ into $a_n$ = 3$a_{n-1}$ + $2^n$ ;
+\newline
+$a_n$ = 3 x $-2^n$ + $2^n$
+\newline
+$a_n$ = $2^n$ (-3 + 1) = $2^n$ x (-2)
+\newline
+$a_n$ = $-2^{n+1}$
+\newpage
+\subproblem{b} Find the solution with $a_0$ = 1.
+\solution
+\newline
+$a_n$ = 3$a_{n-1}$ + $2^n$  and $a_0$ = 1.
+\newline
+non-homogeneous linear recurrences have two parts. One of these homo part, other is particular part.
+And this is represented as $a_n$ = $a_n^h$ + $a_n^p$
+\newline
+particular solution is same as in part a.
+That is $a_n^p$ =  $-2^{n+1}$
+\newline
+$a_n$ - 3$a_{n-1}$ = 0
+\newline
+if we divide by $a_{n-1}$, then the characteristhic equation is found.
+That is ;
+\newline
+r - 3 = 0,  r = 3.
+\newline
+$a_n^h$ = A x $3^n$
+\newline
+$a_n$ = A x $3^n$ + $-2^{n+1}$
+\newline
+for $a_0$ = 1
+\newline
+A x $3^0$ $-2^{0+1}$
+\newline
+A-2 = 1 , A = 3
+\newline
+The equation is :  $3^{n+1} - 2^{n+1}$
+\newline
+\problem{2}{35}
+Solve the recurrence relation f(n) = 4f(n-1) - 4f(n-2) + $n^2$ for f(0) = 2 and f(1) = 5. 
+\solution
+\newline
+non-homogenous recurrence releation has two parts: homogenous part and particular part.
+\newline
+\newline
+homogeneous part is written on one side and particular part on the other side of the equality.
+\newline
+f(n) - 4f(n-1) + 4f(n-2) = $n^2$
+\newline
+\newline
+$f(n)^{(g)}$ = $f(n)^{(h)}$ + $f(n)^{(p)}$
+\newline 
+\newline
+finding characteristhic equation with homogenous part : 
+\newline
+\newline
+$f(n)^{(h)}$ = f(n) - 4f(n-1) + 4f(n-2)
+\newline
+\newline
+if we divide each term by f(n-2) ;
+\newline
+characteristic equation ;
+\newline
+$r^2$ -4r + 4 = 0
+\newline
+=\> (r-2)(r-2) = 0      => r=2
+\newline
+\newline
+$f(n)^{(h)}$ = p . $2^n$ + q.n.$2^n$
+\newline
+\newline
+solving particular part :
+\newline
+\newline
+ $f(n)^{(p)}$ = A.$n^2$ + B.n + C
+\newline
+\newline
+Putting f(n) into the original equation ;
+\newline
+\newline
+A.$n^2$ + B.n + C = 4[A.$(n-1)^2$ + B.(n-1) + C] -4[A.$(n-2)^2$ + B.(n-2) + C] + $n^2$
+\newline
+\newline
+A.$n^2$ + B.n + C = 4.[A.($n^2$ -2.n +1) + B.n -B + C] -4.[A.($n^2$ -4.n + 4) + B.n -2.B + C] + $n^2$
+\newline
+\newline
+A.$n^2$ + B.n + C = 4A$n^2$ -8An + 4A +4Bn -4B + 4C - 4A$n^2$ + 16An -16A - 4Bn + 8B -4C + $n^2$
+\newline
+\newline
+A$n^2$ + B.n + C = $n^2$ + 8An -12A + 4B
+\newline
+\newline
+variables of the same degree must be equal to the same coefficient
+\newline
+\newline
+A = 1, B = 8, C = -12.1 + 4.8 = 20
+\newline
+\newline
+$f(n)^{(p)}$ = $n^2$ + 8n + 20
+\newline
+\newline
+f(n) = p.$2^n$ + q.n.$2^n$ + $n^2$ + 8n + 20
+\newline
+\newline
+f(0) = 2 , f(1) = 5
+\newline
+\newline
+f(0) = p + 20 = 2
+\newline
+p = -18
+\newline
+\newline
+f(1) = 2.(-18) + 2.q + 1 + 8 + 20 = 5
+\newline
+\newline
+q = 6
+\newline
+\newline
+f(n) = -18.$2^n$ + 6.n.$2^n$ + $n^2$ + 8n + 20
+
+\newpage
+\problem{3}{20+15 = 35}
+Consider the linear homogeneous recurrence relation $a_n$ = 2$a_{n-1}$ - 2$a_{n-2}$.
+\subproblem{a} Find the characteristic roots of the recurrence relation.
+\solution
+\newline
+\newline
+$a_n$ - 2$a_{n-1}$ + 2$a_{n-2}$ = 0
+\newline
+characteristhic equation :
+\newline
+$r^2$ - 2r + 2 = 0
+\newline
+delta = $b^2$ -4ac = $(-2)^2$ -4*1*2 = -4
+\newline
+\newline
+first root = (-b + $\sqrt{delta}$)/(2*a) = (-(-2) + 2i)/2 = 1+i
+\newline
+second root = (-b - $\sqrt{delta}$)/(2*a) = (-(-2) - 2i)/2 = 1-i
+\newline
+\subproblem{b} Find the solution of the recurrence relation with $a_0$ = 1 and $a_1$ = 2.
+\solution
+\newline
+\newline
+$a_n$ = A $(1+i)^n$ + B $(1-i)^n$
+\newline
+$a_0$ = 1 = A + B (first equation)
+\newline
+$a_1$ = 2 = A x (1+i) + B x (1-i)
+\newline
+A * i - B * i = 1
+\newline
+A-B = 1/i (second equation)
+\newline
+if we find A and B by using first and second equation,
+\newline
+A = (i+1) / 2i
+\newline
+B = (i-1) / 2i
+\newline
+\newline
+$a_n$ = ((i+1) / 2i) x $(1+i)^n$ + ((i-1) / 2i) x $(1-i)^n$
+
+\end{document} 
+

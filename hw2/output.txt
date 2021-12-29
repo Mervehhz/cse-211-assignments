@@ -1,0 +1,48 @@
+n
+(a,a)(a,b)(a,e)(b,b)(b,e)(c,c)(c,d)(d,d)(e,e)
+Reflexive : yes, since (e,e) and all elements are present.
+Symetric :no, (c,d) is found whereas (d,c) is not found
+Antisymetric : yes, (c,d) is found whereas (d,c) is not found
+Transitive : yes, (c,d)is found, since (c,d) and (d,d) are found. 
+n
+(a,a)(a,b)(b,a)(b,b)(c,c)(c,d)(d,c)(d,d)
+Reflexive : no, since (e,e) is not present.
+Symetric : yes, (d,c) is found whereas (c,d) is found
+Antisymetric : no, (d,c) is found whereas (c,d) is found
+Transitive : yes, (d,d)is found, since (d,c) and (c,d) are found. 
+n
+(a,a)(b,b)(c,c)(d,d)(e,e)
+Reflexive : yes, since (e,e) and all elements are present.
+Symetric : yes, (e,e) is found whereas (e,e) is found
+Antisymetric : yes, (e,e) is found whereas (e,e) is not found
+Transitive : yes, (e,e)is found, since (e,e) and (e,e) are found. 
+n
+(1,1)(1,2)(2,1)
+Reflexive : no, since (4,4) is not present.
+Symetric : yes, (2,1) is found whereas (1,2) is found
+Antisymetric : no, (2,1) is found whereas (1,2) is found
+Transitive : no, (2,2) is not found  dispute there are (2,1) and (1,2)
+n
+(1,1)(1,2)(2,1)(2,2)(3,4)(4,1)(4,4)
+Reflexive : no, since (3,3) is not present.
+Symetric :no, (4,1) is found whereas (1,4) is not found
+Antisymetric : no, (2,1) is found whereas (1,2) is found
+Transitive : no, (4,2) is not found  dispute there are (4,1) and (1,2)
+n
+(2,1)(3,1)(3,2)(4,1)(4,2)(4,3)
+Reflexive : no, since (4,4) is not present.
+Symetric :no, (4,3) is found whereas (3,4) is not found
+Antisymetric : yes, (4,3) is found whereas (3,4) is not found
+Transitive : yes, (4,2)is found, since (4,3) and (3,2) are found. 
+n
+(1,1)(1,2)(1,3)(1,4)(2,2)(2,3)(2,4)(3,3)(3,4)(4,4)
+Reflexive : yes, since (4,4) and all elements are present.
+Symetric :no, (3,4) is found whereas (4,3) is not found
+Antisymetric : yes, (3,4) is found whereas (4,3) is not found
+Transitive : yes, (3,4)is found, since (3,4) and (4,4) are found. 
+n
+(1,1)(1,2)(1,4)(2,1)(2,2)(3,3)(4,1)(4,4)
+Reflexive : yes, since (4,4) and all elements are present.
+Symetric : yes, (4,1) is found whereas (1,4) is found
+Antisymetric : no, (4,1) is found whereas (1,4) is found
+Transitive : no, (4,2) is not found  dispute there are (4,1) and (1,2)
